@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <title>Create Groups</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebasejs"></script>
+   
+</head>
+<body>
+    <h1>Teacher Portal</h1>
+    <div>
+        <h2>Create a New Group:</h2>
+        <select id="groupName" placeholder="Group Name">
+            <optgroup>Clubs
+                <option>Coding</option>
+                <option>Nature</option>
+                <option>Archery</option>
+                <option>Choir</option>
+                <option>Art</option>
+                <option>Science</option>
+                <option>Public Speaking</option>
+                <option>Quiz</option>
+            </optgroup>
+            <optgroup>Houses
+                <option>Red</option>
+                <option>Yellow</option>
+                <option>Blue</option>
+                <option>Green</option>
+            </optgroup>
+            <optgroup>Primary
+                <option>Nursery</option>
+                <option>LKG</option>
+                <option>UKG</option>
+                <option>Class 1</option>
+                <option>Class 2</option>
+            </optgroup>
+            <optgroup>Junior
+                <option>Class 3</option>
+                <option>Class 4</option>
+                <option>Class 5</option>
+            </optgroup>
+            <optgroup>Middle
+                <option>Class 6</option>
+                <option>Class 7</option>
+                <option>Class 8</option>
+            </optgroup>
+            <optgroup>Senior
+                <option>Class 9</option>
+                <option>Class 10</option>
+                <option>Class 11</option>
+                <option>Class 12</option>
+            </optgroup>
+        </select>
+        <br><br>
+        <input type="text" id="groupUrl" placeholder="URL of WhatsApp Group">
+        <br><br>
+          
+        <button onclick=pushToFirebase() style="background-color: #ece3f4;
+        color: #000000;
+        width: 150px;
+        height: 50px;
+        font-size: 15px;">Create Group</button>
+        
+    </div>
+    </ul>
+    <br>
+    <br>
+
+    <button onclick="window.location.href='index.html'" style="background-color: #ece3f4;
+    color: #000000;
+    width: 120px;
+    height: 50px;
+    font-size: 15px;
+    margin-top: 200px;">Back to Home</button>
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+        <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA7dfr4NTylLjXTI9mKsD1puiS1zQjTQ7I",
+            authDomain: "la-creo.firebaseapp.com",
+            databaseURL: "https://la-creo-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "la-creo",
+            storageBucket: "la-creo.appspot.com",
+            messagingSenderId: "936519683873",
+            appId: "1:936519683873:web:cf04c89171d30ade8a3860"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        </script>
+        <script>
+        const firestore = firebase.firestore();  
+        const settings = {/* your settings... */ timestampsInSnapshots: true};
+        firestore.settings(settings);
+ 
+
+        async function pushToFirebase() {
+            const groupUrl = document.getElementById("groupUrl").value;
+            const groupName = document.getElementById("groupName").value;
+
+            console.log(groupName,groupUrl);
+
+            const docData = {
+                name: groupName,
+                url: groupUrl
+            };
+            try{
+
+              const docRef = await firestore.collection('groups').add(docData);
+              console.log("Document written with ID: ", docRef.id);
+              alert("Group added successfully!");
+            }catch(error){
+              console.error("Error adding document: ", error);
+              alert("An error occurred while adding the group. Please try again later.");
+            }
+
+        }
+        </script>
+</body>
+</html>

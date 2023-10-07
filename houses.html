@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="index.html">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Houses</title>
+    </head>
+    <body>
+		<div class="nav">
+			<input type="checkbox" id="nav-check">
+			<div class="nav-btn">
+				<label for="nav-check">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+			</div>
+			
+			<div class="nav-links">
+				<a href="primary.html" target="_blank">Primary</a>
+				<a href="junior.html" target="_blank">Junior</a>
+				<a href="middle.html" target="_blank">Middle</a>
+				<a href="senior.html" target="_blank">Senior</a>
+				<a href="houses.html" target="_blank">Houses</a>
+				<a href="clubs.html" target="_blank">Clubs</a>
+			</div>
+			<br><br><br>
+        <h1>Houses</h1>
+		<br>
+		<br>
+		<br>
+        <div class="interschooleventbox">
+			<div class="instagramposts">
+				<main class="deals">
+					<article class="school-item">
+						<br><br>
+						<h3 onclick="document.getElementById('R').style.display = 'block';">Red</h3>
+						<br><br>
+                        <label id="R" style="display: none; font-size: 20px; font-weight: bold;" onclick="window.location.href='https://chat.whatsapp.com/Lsy37bVuWmG7B4BxeUr5Mh'">Click To Join</label>
+					</article>
+		
+					<article class="school-item">
+						<br><br>
+						<h3 onclick="document.getElementById('Y').style.display = 'block';">Yellow</h3>
+						<br><br>
+						<label id="Y" style="display: none; font-size: 20px; font-weight: bold;" onclick="window.location.href='https://chat.whatsapp.com/Lsy37bVuWmG7B4BxeUr5Mh'">Click To Join</label>
+					</article>
+	
+					<article class="school-item">
+						<br><br>
+						<h3 onclick="document.getElementById('B').style.display = 'block';">Blue</h3>
+						<br><br>
+                        <label id="B" style="display: none; font-size: 20px; font-weight: bold;" onclick="window.location.href='https://chat.whatsapp.com/Lsy37bVuWmG7B4BxeUr5Mh'">Click To Join</label>
+					</article>
+
+					<article class="school-item">
+						<br><br>
+						<h3 onclick="document.getElementById('G').style.display = 'block';">Green</h3>
+						<br><br>
+                        <label id="G" style="display: none; font-size: 20px; font-weight: bold;" onclick="window.location.href='https://chat.whatsapp.com/Lsy37bVuWmG7B4BxeUr5Mh'">Click To Join</label>
+					</article>
+	            </main>
+                <br>
+                <hr>
+	
+					<style>
+						* {
+							box-sizing: border-box;
+						}
+						main {
+							max-width: 500px;
+							margin: 0 auto;
+						}
+						article {
+							margin: 1rem 0;
+						}
+                        @supports (display: grid) {
+							main { 
+								max-width: 10000px;
+								margin: 0;
+							}
+							article {
+								margin: 0;
+							}
+							.deals {
+								display: grid;
+								grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+								grid-gap: 1rem;
+							}
+						}
+								
+						.deals {
+							font-family: Nunito; 
+							font-size: 80%;
+						}
+						.school-item {
+							display: flex;
+							flex-flow: column;
+							border-radius: 1em;
+							background-color: #fff;
+							padding: 10px;
+							box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+						}
+							
+						.school-item > h1 {
+							margin: 1rem 1rem 0;
+						}
+						.school-item > ul {
+								margin: 0 0 1rem;
+						}
+						.school-item > p {
+							margin: 0.25em 1rem 1rem;
+						}
+						.school-item > img {
+							order: -1;
+							height: 350px;
+							width: 275px;
+							align-self: center;
+						}
+						.school-item > button {
+							/* margin-top: auto; */
+							padding: 1.3em 3em;
+							font-size: 12px;
+							text-transform: uppercase;
+							letter-spacing: 2.5px;
+							font-weight: 500;
+							color: #000;
+							background-color: #fba479;
+							border: none;
+							border-radius: 45px;
+							box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+							transition: all 0.3s ease 0s;
+							cursor: pointer;
+							outline: none;
+						}
+							
+						.school-item > button:hover {
+							background-color: #fff;
+							box-shadow: 0px 15px 20px #fba479;
+							color: #000;
+							transform: translateY(-7px);
+						}
+							
+						.school-item > button:active {
+							transform: translateY(-1px);
+						}
+
+					</style>
+        
+			</div>
+		</div>
+        <br>
+        <button onclick="window.location.href='index.html'" style="width: 100px;height: 50px; margin-top: 200px;">Back to Home</button>
+    </body>
